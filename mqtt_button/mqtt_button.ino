@@ -4,7 +4,7 @@
 #include <PubSubClient.h>
 
 // Replace with your network credentials and mqtt settings
-const char* ssid = "Paty droid";
+const char* ssid = "paty";
 const char* password = "paty1710";
 const char* mdnsName = "nodemcu";
 const char* mqttServer = "iot.eclipse.org";
@@ -18,6 +18,7 @@ int button = 16; // push button is connected
 int temp = 0;    // temporary variable for reading the button pin status
 
 const int AnalogIn  = A0;
+char batidas[10];
 
 int readingIn = 0;
 
@@ -61,6 +62,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
   for (int i = 0; i < length; i++) {
     Serial.print((char)payload[i]);
   }
+  
   Serial.println();
 
   // Switch on the LED if 1 was received as first character
@@ -93,6 +95,16 @@ void reconnect() {
 void loop() {
   readingIn = analogRead(AnalogIn);
   Serial.println(readingIn);
+
+ 
+//  Serial.println("batidas-->"+batidas);
+
+  char buffer[10];
+  dtostrf(readingIn, 5, 1, buffer);
+  
+  client.publish(mqttPubTopic, buffer);  //publishing its status
+  client.subscribe(mqttSubTopic);  
+  
   
   temp = digitalRead(button);
 
@@ -103,7 +115,10 @@ void loop() {
     delay(1000);
     if (!client.connected()){
       reconnect();
-    }
+    }else{
+       client.publish(mqttPubTopic, "Button Pressed!");  //publishing its status
+      client.subscribe(mqttSubTopic);  
+      }
   } else {
     digitalWrite(led, LOW);
     Serial.println("LED Turned OFF");

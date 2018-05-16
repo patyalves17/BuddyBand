@@ -1,0 +1,179 @@
+{
+  "project_info": {
+    "project_number": "526155151147",
+    "firebase_url": "https://fiap-firebase-c1c4a.firebaseio.com",
+    "project_id": "fiap-firebase-c1c4a",
+    "storage_bucket": "fiap-firebase-c1c4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526155151147:android:f3f8ad687d022d09",
+        "android_client_info": {
+          "package_name": "br.com.fiap.buddyband"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526155151147:android:ab50d058e7173895",
+        "android_client_info": {
+          "package_name": "br.com.ramonilho.thelastfirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526155151147-rotqar3kj27ae60q8nhs3jh3sat7fckt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ramonilho.thelastfirebaseapp",
+            "certificate_hash": "982708b1bb36a13a4c2df5b5b6de97af19a539a3"
+          }
+        },
+        {
+          "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "526155151147-rrbkf96tb3ctmsd4naqhobfoj4lflegm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.fiap.ramon.FirestoreApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526155151147:android:03daf800f1817c7a",
+        "android_client_info": {
+          "package_name": "br.com.ramonilho.theotherfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526155151147-a4204b016usldbm5g54jg09tuoeq5rqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.ramonilho.theotherfirebase",
+            "certificate_hash": "982708b1bb36a13a4c2df5b5b6de97af19a539a3"
+          }
+        },
+        {
+          "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "526155151147-rrbkf96tb3ctmsd4naqhobfoj4lflegm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.fiap.ramon.FirestoreApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526155151147:android:681fb1bda0284197",
+        "android_client_info": {
+          "package_name": "com.example.ramonhonorio.onemorefirebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526155151147-oj8g38326f4p55anm6gdijsv5qn17lb5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ramonhonorio.onemorefirebaseapp",
+            "certificate_hash": "982708b1bb36a13a4c2df5b5b6de97af19a539a3"
+          }
+        },
+        {
+          "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526155151147-6jqnri0q2ghntipa5gv92m5fkilmnoce.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "526155151147-rrbkf96tb3ctmsd4naqhobfoj4lflegm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.fiap.ramon.FirestoreApp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
