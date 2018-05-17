@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("buddyband");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -81,9 +85,13 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
                 String teste = mqttMessage.toString();
+
+                float batida=Math.round(Float.parseFloat(mqttMessage.toString())/10);
+
                 Log.w("mqttReceive",mqttMessage.toString());
-                dataReceived.setText(mqttMessage.toString());
-                mChart.addEntry(Float.valueOf(mqttMessage.toString()));
+                dataReceived.setText(Float.valueOf(batida).toString());
+
+                mChart.addEntry(Float.valueOf(batida));
             }
 
             @Override

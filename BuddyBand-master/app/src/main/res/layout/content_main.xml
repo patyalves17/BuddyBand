@@ -21,7 +21,7 @@
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
-        android:layout_width="370dp"
+        android:layout_width="360dp"
         android:layout_height="277dp"
         android:layout_marginRight="7dp"
         app:layout_constraintRight_toRightOf="parent"

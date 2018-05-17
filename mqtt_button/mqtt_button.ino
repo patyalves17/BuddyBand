@@ -76,18 +76,20 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
 }
 
-void reconnect() {
+boolean reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     if (client.connect("ESP8266Client", mqttUser, mqttPassword)) {
       Serial.println("connected");
-      client.publish(mqttPubTopic, "Button Pressed!");  //publishing its status
-      client.subscribe(mqttSubTopic);             //subscribing to topic
+      return true;
+//      client.publish(mqttPubTopic, "button-panic");  //publishing its status
+//      client.subscribe(mqttSubTopic);             //subscribing to topic
     }
     else {
       Serial.print("Failed, state="); Serial.print(client.state());
       Serial.println(" will try again in 5 seconds...");
       delay(5000);
+      return false;
     }
   }
 }
@@ -95,16 +97,6 @@ void reconnect() {
 void loop() {
   readingIn = analogRead(AnalogIn);
   Serial.println(readingIn);
-
- 
-//  Serial.println("batidas-->"+batidas);
-
-  char buffer[10];
-  dtostrf(readingIn, 5, 1, buffer);
-  
-  client.publish(mqttPubTopic, buffer);  //publishing its status
-  client.subscribe(mqttSubTopic);  
-  
   
   temp = digitalRead(button);
 
@@ -113,16 +105,24 @@ void loop() {
     digitalWrite(led, HIGH);
     Serial.println("LED Turned ON");
     delay(1000);
-    if (!client.connected()){
-      reconnect();
-    }else{
-       client.publish(mqttPubTopic, "Button Pressed!");  //publishing its status
+
+    if (reconnect()) {
+      client.publish(mqttPubTopic, "button-panic");  //publishing its status
       client.subscribe(mqttSubTopic);  
-      }
+    }
   } else {
     digitalWrite(led, LOW);
     Serial.println("LED Turned OFF");
     delay(1000);
+  }
+
+  if (!client.connected()){
+    if (reconnect()) {
+      char buffer[10];
+      dtostrf(readingIn, 5, 1, buffer);
+      client.publish(mqttPubTopic, buffer);  //publishing its status
+      client.subscribe(mqttSubTopic);  
+    }
   }
 
   client.loop();

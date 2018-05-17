@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
